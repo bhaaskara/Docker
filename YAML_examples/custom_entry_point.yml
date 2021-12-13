@@ -1,0 +1,6 @@
+# ubuntu with custom entry point
+FROM ubuntu
+MAINTAINER bhaskar
+RUN apt-get install -y default-jdk
+ADD http://mirrors.jenkins.io/war-stable/latest/jenkins.war /
+ENTRYPOINT ["java","-jar","jenkins.war"]
